@@ -9,6 +9,9 @@
     --color-white: #ffffff;
     --color-black: #000000;
     --color-purple: #fed3ee;
+    --color-pink: #f39bc0;
+    --color-beige: #f2dcca;
+
     --font-large: 48px;
     --font-medium: 28px;
     --font--regular: 18px;
@@ -74,11 +77,76 @@ p {
     margin: 4px 0;
 }
 
-/* Navbar */
+/* Navbar
 #navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
     background-color: var(--color-purple);
+}
+
+.navbar__logo {
+    font-size: var(--font-medium);
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.navbar__menu {
+    display: flex;
+
+}
+
+.navbar__menu__item {
+    padding: 8px 12px;
+    margin: 0 4px;
+    color: var(--color-white);
+    cursor: point;
+}
+
+.navbar__menu__item.active {
+    border: 1px solid white;
+    border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item.hover {
+    background-color: var(--color-pink);
+    border-radius: var(--size-border-radius);
+}
+
+.navbar__toggle-btn {
+    position:absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-white);
+    display: none;
+} */
+
+/* 홈 */
+#home {
+    background: url(./images/background.png) center/cover no-repeat;
+    padding: 40px;
+    text-align: center;
+}
+
+.home__avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+}
+
+.home__title, .home__description {
+    color: var(--color-black);
+}
+
+.home_contact {
+    color: var(--color-white);
+    font-size: var(--font-regular);
+    font-weight: bold;
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-white);
+    border-radius: var(--size-border-radius);     
 }
