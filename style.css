@@ -14,6 +14,7 @@
     --color-gray: #3f3a3c;
     --color-yellow: #fff7d1;
     --color-orange: #feb546;
+    --color-jingray: #434c52;
 
     --font-large: 48px;
     --font-medium: 28px;
@@ -86,12 +87,20 @@ p {
 /* Navbar */
 /* 메뉴바 배경색 */
 #navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
     background-color: #58656D;
-    /* background-color: var(--color-purple); */
+    z-index: 1;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--bold {
+    background-color: var(--color-jingray);
+    padding: 10px;
 }
 
 .navbar__logo {
@@ -137,7 +146,7 @@ p {
 /* 홈 */
 #home {
     background: url(./images/background.png) center/cover no-repeat;
-    padding: 40px;
+    padding: 120px;
     text-align: center;
 }
 
@@ -164,7 +173,7 @@ p {
 
 /* 내소개 */
 .section {
-    padding: 50px;
+    padding: 90px;
     text-align: center;
     margin: auto;
 }
@@ -459,6 +468,26 @@ p {
     color: var(--color-yellow);
 }
 
+.arrow-up{
+    position: fixed;
+    bottom: 50px;
+    right:50px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    color: var(--color-white);
+    background-color: pink;
+    border-radius:50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 @media screen and (max-width: 768px) {
     .navbar__toggle-btn {
         display: block;
@@ -496,5 +525,4 @@ p {
         width: 80px;
         height: 80px;
     }
-
 }
