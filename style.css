@@ -111,6 +111,7 @@ p {
 
 .navbar__menu {
     display: flex;
+    margin: 0;
 
 }
 
@@ -120,17 +121,17 @@ p {
     color: #F19E8E;
     cursor: pointer;
     font-size: 20px;
+    /* border: 1px solid transparent; */
+    border-radius: var(--size-border-radius);
 }
 
 .navbar__menu__item.active {
-    border: 1px solid #F19E8E;
-    border-radius: var(--size-border-radius);
+    border: 1px solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
-    /* background-color: var(--color-pink); */
     background-color: #FFFFFF;
-    border-radius: var(--size-border-radius);
+    border-color: var(--color-white);
 }
 
 .navbar__toggle-btn {
@@ -146,7 +147,8 @@ p {
 /* 홈 */
 #home {
     background: url(./images/background.png) center/cover no-repeat;
-    padding: 120px;
+    padding: 40px;
+    padding-top: 120px;
     text-align: center;
 }
 
@@ -171,6 +173,10 @@ p {
     border-radius: var(--size-border-radius);     
 }
 
+.home__contact:hover {
+    background-color: var(--color-pink);
+}
+
 /* 내소개 */
 .section {
     padding: 90px;
@@ -178,7 +184,7 @@ p {
     margin: auto;
 }
 
-.section__contatiner {
+.section__container {
     max-width: 1200px;
     margin: auto;
 }
@@ -212,11 +218,11 @@ p {
 }
 
 .major__title, .major__description {
-    color: var(--color-gray);
+    color: var(--color-gray)
 }
 
 .major__description {
-    font-size: var(--font-small)
+    font-size: var(--font-small);
 }
 
 .job {
@@ -256,7 +262,7 @@ p {
     display: flex;
     background-color: var(--color-gray);
     color: var(--color-white);
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .skillset__title {
@@ -295,11 +301,11 @@ p {
 
 .tools {
     overscroll-behavior-block: var(--color-gray);
-    padding: 2px;
+    padding: 20px;
 }
 
 .etc {
-    padding: 2px;
+    padding: 20px;
 }
 
 /* 내 작업실 */
@@ -316,12 +322,12 @@ p {
     color: var(--color-white);
 }
 
-.category__btn.active, .category__btn:hover {
+.category__btn.selected, .category__btn:hover {
     background-color: var(--color-pink);
     color: var(--color-white);
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
     opacity: 1;
     top: 0;
@@ -342,10 +348,19 @@ p {
     transition: all var(--animation-duration) ease-in;
 }
 
-.Work__projects {
+.work__projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.work__projects.anim-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
+}
+
+.project.invisible {
+    display: none;
 }
 
 .project {
@@ -491,6 +506,7 @@ p {
 @media screen and (max-width: 768px) {
     .navbar__toggle-btn {
         display: block;
+        background-color: none;
     }
 
     #navbar {
@@ -503,6 +519,10 @@ p {
         text-align: center;
         width: 100%;
         display: none;
+    }
+
+    .navbar__menu.open {
+        display: block;
     }
 
     .about__majors {
